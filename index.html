@@ -863,7 +863,7 @@
         -->
         <br>
         <br>
-      <section class="section contact" id="contact" aria-label="contact">
+      <!-- <section class="section contact" id="contact" aria-label="contact">
         <div class="container">
           <h2 class="h2 section-title">Let's Contact With Us</h2>
           <p class="section-text">
@@ -1006,20 +1006,132 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
     </article>
   </main>
   <!-- 
       - #FOOTER
     -->
-  <footer class="footer">
-    <div class="container">
-      <p class="copyright">
-        &copy; 2023 All Rights Reserved by
-        <a href="#" class="copyright-link">PCD Consultancy</a>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-comp">
+            <h4>company</h4>
+            <ul>
+              <li><a href="#">about us</a></li>
+              <li><a href="#">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+            <br/>
+            <h4>Contact Us</h4>
+            <ul>
+              <li><i class="fa-solid fa-phone" style="margin-right: 10px;"></i>+91 8956827276</li>
+              <li><i class="fa-solid fa-envelope" style="margin-right: 10px;"></i>rushabhbelani2212@gmail.com</li>
+              <li><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>Silvassa,Dadra Nagar Haveli</li>
+            </ul>
+            <br/>
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-col-contact">
+            <h4>Let's Contact With Us</h4>
+            <p style="color: white;">Lorem</p>
+            <br/>
+            <form 
+            action="https://script.google.com/macros/s/AKfycbz24vbjI3DLMycMfkh_n4-4OpPg7r0tRyI6SVOzrbb8yQ39vVxIeMoDhzvxRhhGcLsc/exec"
+            method="POST"
+            class="contact-form"
+            id="myForm"
+            >
+              <div class="input-wrapper">
+                <input type="text" name="name" aria-label="name" placeholder="Your name*" required class="input-field">
+                <input type="email" name="email_address" aria-label="email" placeholder="Email address*" required
+                  class="input-field">
+              </div>
+              <div class="input-wrapper">
+                <input type="text" name="subject" aria-label="subject" placeholder="Subject" class="input-field">
+                <input type="number" name="phone" aria-label="phone" placeholder="Phone number" class="input-field">
+              </div>
+              <textarea name="message" aria-label="message" placeholder="Your message...*" required
+                class="input-field"></textarea>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="terms_and_policy" id="terms" required class="checkbox">
+                <label for="terms" class="label">
+                  Accept
+                  <a href="#" class="label-link">Terms of Services</a>
+                  and
+                  <a href="#" class="label-link">Privacy Policy</a>
+                </label>
+              </div>
+              <div id="responseMessage" style="margin-bottom:5px;color:hsl(341, 100%, 49%);font-size: 20px;"></div>
+              <button type="button" onclick="submitForm()" class="btn btn-secondary-2">
+                Send Message
+              </button>
+            </form>
+            <script>
+              function validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+              }
+            
+              function validatePhoneNumber(phone) {
+                // You can customize the phone number validation based on your requirements
+                // This is a simple example that checks if the phone number has at least 10 digits
+                const phoneRegex = /^\d{10,}$/;
+                return phoneRegex.test(phone);
+              }
+            
+              function submitForm() {
+                var form = document.getElementById("myForm");
+            
+                // Validate name, email, and message (assuming these are required)
+                var name = form.elements["name"].value;
+                var email = form.elements["email_address"].value;
+                var message = form.elements["message"].value;
+            
+                if (!name || !email || !message) {
+                  document.getElementById("responseMessage").innerText = "Please fill out all required fields.";
+                  return;
+                }
+            
+                // Validate email
+                if (!validateEmail(email)) {
+                  document.getElementById("responseMessage").innerText = "Please enter a valid email address.";
+                  return;
+                }
+            
+                // Validate phone number
+                var phone = form.elements["phone"].value;
+                if (phone && !validatePhoneNumber(phone)) {
+                  document.getElementById("responseMessage").innerText = "Please enter a valid phone number.";
+                  return;
+                }
+            
+                fetch(form.action, {
+                  method: "POST",
+                  body: new FormData(form),
+                })
+                  .then(function (response) {
+                    return response.text();
+                  })
+                  .then(function (data) {
+                    document.getElementById("responseMessage").innerText = "Thanks! We'll be in touch with you shortly!";
+                  })
+                  .catch(function (error) {
+                    console.error("Error:", error);
+                  });
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+   </footer>
   <!-- 
       - #BACK TO TOP
     -->

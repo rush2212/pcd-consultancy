@@ -765,7 +765,7 @@ text-align: left;
 
 .contact-form {
   background: var(--white-2);
-  padding: 8px;
+  padding: 15px;
   border-radius: var(--radius-2);
   margin-block-end: 30px;
   border-radius: 20px;
@@ -871,24 +871,120 @@ textarea.input-field {
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
-
-.footer {
-  background-color: var(--white-2);
-  padding-block: 20px;
+.row{
+	display: flex;
+  flex-direction: row;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col-comp{
+   width: 40%;
+   padding: 0 15px;
+}
+.footer-col-contact{
+  width: 60%;
+  padding: 0 15px;
+}
+.footer-col-comp h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col-contact h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
 }
 
-.copyright {
-  font-size: var(--fs-6);
-  text-align: center;
+.footer-col-comp h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col-contact h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col-comp ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col-comp ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col-comp ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col-comp .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col-comp .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
 }
 
-.copyright-link {
-  color: var(--red-crayola);
-  font-weight: var(--fw-500);
-  display: inline-block;
+/*responsive*/
+@media(max-width: 768px){
+  .footer-col-contact{
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .footer-col-comp{
+    width: 50%;
+    margin-bottom: 30px;
+  }
 }
+@media(max-width: 575px){
+  .footer-col-contact{
+    width: 100%;
+  }
+  .footer-col-comp{
+    width: 100%;
+  }
+  .row{
+    flex-wrap: wrap-reverse;
+  }
 
-
+}
 
 
 
