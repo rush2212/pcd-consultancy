@@ -1200,6 +1200,10 @@ ul {
   .chip h4{
     display: none;
   }
+  .chip img{
+    width: 25px;
+    height: 25px;
+  }
   .chip-list {
     list-style: none;
     padding: 2px;
